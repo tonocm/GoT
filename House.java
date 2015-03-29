@@ -1,3 +1,4 @@
+import java.util.*;
 public class House{
   
   String name;
@@ -11,5 +12,4 @@ public class House{
     this.seas = seas;
     this.handCards = handCards;
   }
-  
 }

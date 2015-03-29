@@ -12,28 +12,27 @@ public class Card{
   public Card(){
     
   }
- 
   
-  /* First Turn Card */
+  /* First Turn Card 
   public Card(){
     
-  }
+  }*/
   
   
-  /* Second Turn Card */
+  /* Second Turn Card 
   public Card(){
     
-  }
+  }*/
   
   
-  /* Third Turn Card */
+  /* Third Turn Card 
   public Card(){
     
-  }
+  }*/
   
   
-  /* Wildling Card */
+  /* Wildling Card 
   public Card(){
     
-  }
+  }*/
 }

@@ -11,21 +11,21 @@ public class Order{
     this.star = star;
     
     /* Assigning order type based on order's name */
-    switch(name.toLowerCase()){
-      case "march":
-      case "attack":
+    switch((char)name.charAt(0)){
+      case 'm':
+      case 'a':
         orderType = 1;
       break;
-      case "defense":
+      case 'd':
         orderType = 2;
       break;
-      case "support":
+      case 's':
         orderType = 3;
       break;
-      case "crown":
+      case 'c':
         orderType = 4;
       break;
-      case "raid":
+      case 'r':
         orderType = 5;
       break;
       default:

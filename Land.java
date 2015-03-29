@@ -1,9 +1,9 @@
-public class Land{
+public class Land extends Territory{
  
-  String name;
+  //String name;
+  //String occupiedBy;
+  //boolean available; //available if no one has claimed it yet, or if it's being held by a coin.
   String startingHouse; //can be null.
-  String occupiedBy;
-  boolean available; //available if no one has claimed it yet, or if it's being held by a coin.
   boolean playable; //if less than X players, this land is out of bounds.
   boolean coin;
   boolean crown;
@@ -11,7 +11,8 @@ public class Land{
   int supply; //0 = no supplies, 1 = 1 supply, 2 = 2 supplies
   
   public Land(String name, String startingHouse, boolean playable, boolean crown, int mustering, int supply){
-    this.name = name;
+    super(name);    
+//this.name = name;
     this.startingHouse = startingHouse;
     this.playable = playable;
     this.crown = crown;
