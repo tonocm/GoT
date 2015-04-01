@@ -8,8 +8,8 @@ public class Territory{
   
   public Territory(String name){
     this.name = name;
+    adjacent = new LinkedList<Territory>();
     occupiedBy = "";
     available = true;
-    adjacent = new LinkedList<Territory>();
   }
 }

@@ -1,0 +1,50 @@
+1	East Summer Sea	1	0	0	
+1	West Summer Sea	1	0	0	
+0	Starfall	2	1	0	
+0	Salt Shore	1	1	0	
+0	Yronwood	2	0	0	
+0	Sunspear	1	1	1	
+0	Three Towers	1	1	0	
+0	Old Town	1	0	0	
+0	Prince's Pass	1	1	1	
+0	The Boneway	1	0	1	
+1	Sea of Dorne	1	0	0	
+1	Redwyne Straights	1	0	0	
+0	The Arbor	1	0	1	
+0	Storms End	2	0	0	
+0	Dornish Marches	1	0	1	
+0	Highgarden	1	2	0	
+0	The Reach	2	0	0	
+0	Kingswood	1	1	1	
+0	Shipbreaker Bay	1	0	0	
+0	Searoad Marches	1	1	0	
+0	Blackwater	1	2	0	
+0	King's Landing	1	0	2	
+1	Blackwater Bay	1	0	0	
+1	The Golden Sound	1	0	0	
+0	Lannisport	1	2	0	
+0	Stoney Sept	1	0	1	
+0	Harrenhal	2	0	1	
+0	Crackclaw Point	2	0	0	
+0	Dragon Stone	1	1	1	
+0	Riverrun	1	1	1	
+0	The Eyrie	2	1	1	
+0	The Mountains of the Moon	1	1	0	
+0	The Twins	1	0	1	
+0	The Fingers	1	1	0	
+0	Seagard	1	1	1	
+1	Ironman's Bay	1	0	0	
+0	Pyke	1	1	1	
+0	Moat Cailin	2	0	0	
+0	Flint's Finger	2	0	0	
+0	Greywater Watch	1	1	0	
+1	Sunset Sea	1	0	0	
+1	The Narrow Sea	1	0	0	
+0	The Stony Shore	1	1	0	
+0	Winterfell	1	1	1	
+0	White Harbor	2	0	0	
+0	Widow's Watch	1	1	0	
+1	The Shivering Sea	1	0	0	
+0	Karhold	1	0	1	
+0	Castle Black	1	0	1	
+1	Bay of Ice	1	0	0
