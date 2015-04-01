@@ -12,7 +12,6 @@ public class Land extends Territory{
   
   public Land(String name, String startingHouse, boolean playable, boolean crown, int mustering, int supply){
     super(name);    
-//this.name = name;
     this.startingHouse = startingHouse;
     this.playable = playable;
     this.crown = crown;
@@ -24,5 +23,9 @@ public class Land extends Territory{
       available = true;
     else
       available = false;
+  }
+  /* For testing */
+  public Land(String name){
+    super(name);
   }
 }

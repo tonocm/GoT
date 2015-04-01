@@ -1,10 +1,10 @@
 import java.util.*;
 public class Board{
   
-  HashMap board;
+  HashMap<String, Territory> board;
   
   public Board(){
-    board = new HashMap();
+    board = new HashMap<String, Territory>();
   }
   
   public void addTerritory(Territory x){
