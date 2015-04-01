@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 public class Sea extends Territory{
  /*
   String name;
