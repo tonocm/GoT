@@ -6,8 +6,73 @@ class GoT{
     
     Board game = makeBoard();
     
+    initialize(game);
     
-    System.out.println(game.board.get("Riverrun").adjacent);
+   //System.out.println(game.board.get("Riverrun").adjacent);
+    
+  }
+  
+  public static void initialize(Board game) throws IOException{
+    File file = new File("init.txt");
+    Scanner scan = new Scanner(file).useDelimiter("\t");
+    
+    while(scan.hasNext()){
+      
+      String name;
+      LinkedList<Territory> /*foot, knight, ship,*/ territories = new LinkedList<Territory>();
+      int iron, fiefdom, court, supply, victory;
+      /*
+       * Given the file format, total tokens will always be a multiple of 5.
+       * 1 - House Name
+       * 2 - Footmen Placement
+       * 3 - Knights Placement
+       * 4 - Ships Placement
+       * 5 - Iron Throne Track
+       * 6 - Fiefdom Track
+       * 7 - King's Court Track
+       * 8 - Supply
+       * 9 - Victory
+       */
+      
+      /* Using trim to avoid String -> Int conflicts */
+      
+      name = scan.next().trim();
+      System.out.println(name);
+      
+      /* Hack to account for Aries' excel instead of txt file */
+      if(!scan.hasNext())
+        break;
+      
+      /*foot = */makeList(territories, scan.next(), game);
+      //System.out.println(foot);
+      
+      /*knight = */makeList(territories, scan.next(), game);
+      //System.out.println(knight);
+      
+      /*ship = */makeList(territories, scan.next(), game);
+      //System.out.println(ship);
+      
+      iron = Integer.parseInt(scan.next().trim());
+      //System.out.println(iron);
+      
+      fiefdom= Integer.parseInt(scan.next().trim());
+      //System.out.println(fiefdom);
+      
+      court = Integer.parseInt(scan.next().trim());
+      //System.out.println(court);
+      
+      supply = Integer.parseInt(scan.next().trim());
+      //System.out.println(supply);
+      
+      victory = Integer.parseInt(scan.next().trim());
+      //System.out.println(victory);
+      
+      
+      game.addHouse(new House(name, territories));
+      
+      
+    }
+    
     
   }
   
@@ -81,4 +146,20 @@ class GoT{
     return out;
   }
   
+  public static void makeList(LinkedList<Territory> out, String s, Board game){
+    /* Getting rid of quotes" */
+    s = s.substring(1,s.length());
+    s = s.substring(0,s.length()-1);
+
+    StringTokenizer token = new StringTokenizer(s, ",");
+    String tmp;
+    
+    while(token.hasMoreTokens()){
+      tmp = token.nextToken().trim();
+      System.out.println(tmp);
+      out.add(game.board.get(tmp));
+      game.board.get(tmp).power = game.board.get(tmp).power + 1;
+      
+    }
+  }
 }

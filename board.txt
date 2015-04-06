@@ -26,7 +26,7 @@
 0	Stoney Sept	1	0	1	
 0	Harrenhal	2	0	1	
 0	Crackclaw Point	2	0	0	
-0	Dragon Stone	1	1	1	
+0	Dragonstone	1	1	1	
 0	Riverrun	1	1	1	
 0	The Eyrie	2	1	1	
 0	The Mountains of the Moon	1	1	0	
@@ -44,7 +44,7 @@
 0	Winterfell	1	1	1	
 0	White Harbor	2	0	0	
 0	Widow's Watch	1	1	0	
-1	The Shivering Sea	1	0	0	
+1	Shivering Sea	1	0	0	
 0	Karhold	1	0	1	
 0	Castle Black	1	0	1	
 1	Bay of Ice	1	0	0
