@@ -5,10 +5,13 @@ class GoT{
   public static void main (String[] args) throws IOException{
     
     Board game = makeBoard();
-    
     initialize(game);
+    boolean continue = true;
     
-   //System.out.println(game.board.get("Riverrun").adjacent);
+    while(continue){
+      
+      
+    }
     
   }
   
@@ -37,43 +40,30 @@ class GoT{
       /* Using trim to avoid String -> Int conflicts */
       
       name = scan.next().trim();
-      System.out.println(name);
       
       /* Hack to account for Aries' excel instead of txt file */
       if(!scan.hasNext())
         break;
       
       /*foot = */makeList(territories, scan.next(), game);
-      //System.out.println(foot);
       
       /*knight = */makeList(territories, scan.next(), game);
-      //System.out.println(knight);
       
       /*ship = */makeList(territories, scan.next(), game);
-      //System.out.println(ship);
       
       iron = Integer.parseInt(scan.next().trim());
-      //System.out.println(iron);
       
       fiefdom= Integer.parseInt(scan.next().trim());
-      //System.out.println(fiefdom);
       
       court = Integer.parseInt(scan.next().trim());
-      //System.out.println(court);
       
       supply = Integer.parseInt(scan.next().trim());
-      //System.out.println(supply);
       
       victory = Integer.parseInt(scan.next().trim());
-      //System.out.println(victory);
       
       
       game.addHouse(new House(name, territories));
-      
-      
     }
-    
-    
   }
   
   public static Board makeBoard() throws IOException{
@@ -156,10 +146,8 @@ class GoT{
     
     while(token.hasMoreTokens()){
       tmp = token.nextToken().trim();
-      System.out.println(tmp);
       out.add(game.board.get(tmp));
       game.board.get(tmp).power = game.board.get(tmp).power + 1;
-      
     }
   }
 }
