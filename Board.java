@@ -16,4 +16,7 @@ public class Board{
   public void addHouse(House x){
     
   }
+  public House getHouse(String x){
+   return houses.get(x);
+  }
 }

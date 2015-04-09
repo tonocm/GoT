@@ -7,8 +7,21 @@ class GoT{
     Board game = makeBoard();
     initialize(game);
     boolean continue = true;
+    int i=0;
+    
+    //House baratheon, lannister, stark, martell, greyjoy, tyrell;
     
     while(continue){
+      
+      /* Baratheon
+       * Lannister
+       * Stark
+       * Martell
+       * Greyjoy
+       * Tyrell */
+      
+      /* Turns */
+      //baratheon = game.getHouse("Baratheon");
       
       
     }
