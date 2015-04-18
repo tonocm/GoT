@@ -6,12 +6,15 @@ class GoT{
     
     Board game = makeBoard();
     initialize(game);
-    boolean continue = true;
-    int i=0;
+    String [] ironTrack = {"Baratheon", "Lannister", "Stark", "Martell", "Greyjoy", "Tyrell"};
+    boolean cont = true;
+    int i=0, j=0;
     
     //House baratheon, lannister, stark, martell, greyjoy, tyrell;
     
-    while(continue){
+    /* Each house has three movement orders */
+    
+    while(cont){
       
       /* Baratheon
        * Lannister
@@ -20,10 +23,12 @@ class GoT{
        * Greyjoy
        * Tyrell */
       
-      /* Turns */
-      //baratheon = game.getHouse("Baratheon");
-      
-      
+      /* Move Orders */
+      for(i=0; i < 3; i++){
+        for(j=0; j < ironTrack.length; j++){
+          game.makeMove(ironTrack[j]);
+        }
+      } 
     }
     
   }

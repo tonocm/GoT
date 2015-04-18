@@ -3,10 +3,10 @@ public class Board{
   
   HashMap<String, Territory> board;
   HashMap<String, House> houses;
-  
+
   public Board(){
     board = new HashMap<String, Territory>();
-    houses = new HashMap<String, House>();
+    houses = new HashMap<String, House>(); 
   }
   
   public void addTerritory(Territory x){
@@ -19,4 +19,12 @@ public class Board{
   public House getHouse(String x){
    return houses.get(x);
   }
+  
+  public void makeMove(String houseName){
+   House current = getHouse(houseName);
+   System.out.println(houseName);
+   System.out.println(current.name);
+   
+  }
+  
 }

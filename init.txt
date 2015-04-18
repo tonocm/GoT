@@ -1,0 +1,6 @@
+Lannister "Stoney Sept, Lannisport" "Lannisport"  "The Golden Sound"  2 6 1 2 1
+Baratheon "Kingswood, Dragonstone"  "Dragonstone" "Shipbreaker Bay, Shipbreaker Bay"  1 5 4 2 1
+Stark     "Winterfell, White Harbor"              "Winterfell" "Shivering Sea"  3     4 2 1 2
+Greyjoy   "Pyke, Greywater Watch"                 "Pyke"       "Ironman's Bay, Pyke"  5 1 6 2 1
+Tyrell    "Highgarden, Dornish Marches"           "Highgarden" "Redwyne Straights"    6 2 5 2 1
+Martell   "Salt Shore, Sunspear"                  "Sunspear"   "Sea of Dorne"         4 3 3 2 1 
