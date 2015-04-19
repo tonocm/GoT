@@ -6,7 +6,7 @@ public class Territory{
   String occupiedBy;
   boolean available;
   int power;
-  int footmen, knights, ships, siege;
+  int footmen, knights, ships, sieges;
     
   public Territory(String name){
     this.name = name;
@@ -16,7 +16,7 @@ public class Territory{
     footmen = 0;
     knights = 0;
     ships = 0;
-    siege = 0;
+    sieges = 0;
     power = 0;
   }
 }

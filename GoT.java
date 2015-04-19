@@ -5,15 +5,14 @@ class GoT{
   public static void main (String[] args) throws IOException{
     
     Board game = makeBoard();
+    String[] ironTrack = {"Baratheon", "Lannister", "Stark", "Martell", "Greyjoy", "Tyrell"};
     initialize(game);
     boolean cont = true;
-    int i=0;
-    
-    System.out.println(game.houses);
-    
+    int i=0, j=0, moves=0;
+
     //House baratheon, lannister, stark, martell, greyjoy, tyrell;
     
-    //while(continue){
+    while(cont){
       
       /* Baratheon
        * Lannister
@@ -22,12 +21,44 @@ class GoT{
        * Greyjoy
        * Tyrell */
       
-      /* Turns */
-      //baratheon = game.getHouse("Baratheon");
+      /* Move Orders */
+      for(i=0; i < 3; i++){
+        for(j=0; j < ironTrack.length; j++){
+          System.out.println(ironTrack[j]); //house name
+          
+          
+          //System.out.println(countCastles(game.getHouse(ironTrack[j])));
+          
+          if(countCastles(game.getHouse(ironTrack[j])) >= 7){
+            cont = false; //game over.
+            break;
+          }
+          
+          game.moveOrder(ironTrack[j]);
+          moves++;
+        }
+        //break;//remove this after testing
+      }
       
+      if(!cont)
+        break; //game over.
       
-    //}
+      //break;//remove this after testing
+    }
+    System.out.println("House " + ironTrack[j]+ " won! in " + moves + " moves!");
+  }
+  
+  public static int countCastles(House x){
     
+    int out=0, i=0;
+    
+    for(i=0; i < x.territories.size(); i++){
+      if(x.territories.get(i) instanceof Land){
+        if(((Land)x.territories.get(i)).mustering > 0)
+          out++;
+      }
+    }
+    return out;
   }
   
   public static void initialize(Board game) throws IOException{
@@ -60,11 +91,11 @@ class GoT{
       if(!scan.hasNext())
         break;
       
-      /*foot = */makeList(territories, scan.next(), game);
+      /*foot = */makeList(territories, scan.next(), game, 1);
       
-      /*knight = */makeList(territories, scan.next(), game);
+      /*knight = */makeList(territories, scan.next(), game, 2);
       
-      /*ship = */makeList(territories, scan.next(), game);
+      /*ship = */makeList(territories, scan.next(), game, 3);
       
       iron = Integer.parseInt(scan.next().trim());
       
@@ -75,7 +106,6 @@ class GoT{
       supply = Integer.parseInt(scan.next().trim());
       
       victory = Integer.parseInt(scan.next().trim());
-      
       
       game.addHouse(new House(name, territories));
     }
@@ -95,9 +125,9 @@ class GoT{
        * Given the file format, total tokens will always be a multiple of 5.
        * 1 - [Sea = 1, Land = 0]
        * 2 - Name
-       * 3 - [Castle = 0, Stronghold = 1]
-       * 4 - Supplies
-       * 5 - Crowns
+       * 3 - [Castle = 2, Stronghold = 1, 0 = Nothing]
+       * 4 - Supplies [0, 1 or 2]
+       * 5 - Crowns [0, 1 or 2]
        */
       
       /* Using trim to avoid String -> Int conflicts */
@@ -130,6 +160,7 @@ class GoT{
       
       /* 1 */ name = scan.next().trim();
       /* 2 */ adjacentRaw = scan.next();
+      
       out.board.get(name).adjacent = makeAdjacent(out, name, adjacentRaw);
     }
     scan.close();
@@ -151,18 +182,34 @@ class GoT{
     return out;
   }
   
-  public static void makeList(LinkedList<Territory> out, String s, Board game){
+  public static void makeList(LinkedList<Territory> out, String s, Board game, int type){
     /* Getting rid of quotes" */
     s = s.substring(1,s.length());
     s = s.substring(0,s.length()-1);
-
+    
     StringTokenizer token = new StringTokenizer(s, ",");
     String tmp;
     
     while(token.hasMoreTokens()){
       tmp = token.nextToken().trim();
-      out.add(game.board.get(tmp));
-      game.board.get(tmp).power = game.board.get(tmp).power + 1;
+      
+      if(!out.contains(game.board.get(tmp)))
+        out.add(game.board.get(tmp));
+      
+      if(type == 1){
+        game.board.get(tmp).footmen = game.board.get(tmp).footmen + 1;
+        game.board.get(tmp).power = game.board.get(tmp).power + 1;
+      }
+      else if(type == 2){
+        game.board.get(tmp).knights = game.board.get(tmp).knights + 1;
+        game.board.get(tmp).power = game.board.get(tmp).power + 2;
+      }
+      else{
+        game.board.get(tmp).ships = game.board.get(tmp).ships + 1;
+        game.board.get(tmp).power = game.board.get(tmp).power + 1;
+      }
+      
+      
     }
   }
 }
