@@ -142,7 +142,7 @@ public class Board{
           System.out.println("Error in last heuristic case");
       }
       else
-        System.out.println("Forefit Turn. All adjacent territories occupied");
+        System.out.println("Forfeit Turn. All adjacent territories occupied");
     }
   }
   
