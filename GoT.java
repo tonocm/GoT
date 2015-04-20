@@ -8,12 +8,12 @@ class GoT{
     String[] ironTrack = {"Baratheon", "Lannister", "Stark", "Martell", "Greyjoy", "Tyrell"};
     initialize(game);
     boolean cont = true;
-    int i=0, j=0, moves=0;
+    int i=0, j=0, moves=0, turns=0;
 
     //House baratheon, lannister, stark, martell, greyjoy, tyrell;
     
     while(cont){
-      
+      turns++;
       /* Baratheon
        * Lannister
        * Stark
@@ -24,28 +24,45 @@ class GoT{
       /* Move Orders */
       for(i=0; i < 3; i++){
         for(j=0; j < ironTrack.length; j++){
-          System.out.println(ironTrack[j]); //house name
           
-          
-          //System.out.println(countCastles(game.getHouse(ironTrack[j])));
-          
-          if(countCastles(game.getHouse(ironTrack[j])) >= 7){
+          /* Can get rid of the turns to see what happens until someone actually wins */
+          if(countCastles(game.getHouse(ironTrack[j])) >= 7 || turns >= 10){
             cont = false; //game over.
             break;
           }
           
-          game.moveOrder(ironTrack[j]);
+          System.out.println(ironTrack[j] + " Castles: " + countCastles(game.getHouse(ironTrack[j]))); //house name and castles
           moves++;
+          //System.out.println(countCastles(game.getHouse(ironTrack[j])));
+          
+          game.moveOrder(ironTrack[j]);
         }
-        //break;//remove this after testing
+        if(!cont)
+          break; //game over.
       }
-      
       if(!cont)
         break; //game over.
-      
-      //break;//remove this after testing
     }
-    System.out.println("House " + ironTrack[j]+ " won! in " + moves + " moves!");
+    
+    if(turns < 10)
+      System.out.println("House " + ironTrack[j]+ " won! in " + turns + " turns!");
+    else
+      findWinner(game);
+  }
+  public static void findWinner(Board game){
+    String[] ironTrack = {"Baratheon", "Lannister", "Stark", "Martell", "Greyjoy", "Tyrell"};
+    
+    int maxCastles=0, maxIndex=-1;
+    
+    for(int i=0; i < ironTrack.length; i++){
+      if(game.getHouse(ironTrack[i]).castles > maxCastles){
+        maxCastles = game.getHouse(ironTrack[i]).castles;
+        maxIndex = i;
+      }
+    }
+    
+    System.out.println("House " + ironTrack[maxIndex]+ " won! with " + maxCastles + " castles!");
+    
   }
   
   public static int countCastles(House x){
